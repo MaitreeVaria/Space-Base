@@ -1,0 +1,647 @@
+
+body{
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  background-image: url(../images/background-solar.jpg);
+  overflow-x: hidden;
+  overflow-y:hidden;
+}
+@keyframes spinsun {
+  0% { transform: rotate(0); }
+  100%   { transform: rotate(-360deg); }}
+@keyframes spin{
+  100%{background-position: 100%;}}
+@keyframes shadow {
+  0% { background-position: 130% 0%; }
+  33%{ background-position: 50% 0%; }
+  55% { background-position: 0% 0%; }
+  80%{ background-position: -50% 0%; }
+  100%{ background-position: -50% 0%; }
+}
+@keyframes orbitmercury {
+  0% { z-index:2; transform: rotateY(0); }
+  49% { z-index:2; }
+  50% { z-index:-2; }
+  99% { z-index:-2; }
+  100%   { z-index:2; transform: rotateY(360deg); }
+}
+@keyframes orbitvenus {
+  0% { z-index:3; transform: rotateY(0); }
+  49% { z-index:3; }
+  50% { z-index:-3; }
+  99% { z-index:-3; }
+  100%   { z-index:3; transform: rotateY(360deg); }
+}
+@keyframes orbitearth {
+  0% { z-index:4; transform: rotateY(0); }
+  49% {z-index:4;}
+  50% {z-index:-4;}
+  99% {z-index:-4;}
+  100%   { z-index:4; transform: rotateY(360deg);}
+}
+@keyframes orbitmars {
+  0% { z-index:5; transform: rotateY(0); }
+  49% { z-index:5; }
+  50% { z-index:-5; }
+  99% { z-index:-5; }
+  100%   { z-index:5; transform: rotateY(360deg); }
+}
+@keyframes orbitjupiter {
+  0% { z-index:6; transform: rotateY(270); }
+  49% { z-index:6; }
+  50% { z-index:-6; }
+  99% { z-index:-6; }
+  100%   { z-index:6; transform: rotateY(360deg); }
+}
+@keyframes orbitsaturn {
+  0% { z-index:7; transform: rotateY(270); }
+  49% { z-index:7; }
+  50% { z-index:-7; }
+  99% { z-index:-7; }
+  100%   { z-index:7; transform: rotateY(360deg); }
+}
+@keyframes orbituranus {
+  0% { z-index:8; transform: rotateY(270); }
+  49% { z-index:8; }
+  50% { z-index:-8; }
+  99% { z-index:-8; }
+  100%   { z-index:8; transform: rotateY(360deg); }
+}
+@keyframes orbitneptune {
+  0% { z-index:9; transform: rotateY(270); }
+  49% { z-index:9; }
+  50% { z-index:-9; }
+  99% { z-index:-9; }
+  100%   { z-index:9; transform: rotateY(360deg); }
+}
+@keyframes orbitpluto {
+  0% { z-index:10; transform: rotateY(270); }
+  49% { z-index:10; }
+  50% { z-index:-10; }
+  99% { z-index:-10; }
+  100%   { z-index:9; transform: rotateY(360deg); }
+}
+@keyframes anti-spin {
+  from { transform: rotateY(0); }
+  to   { transform: rotateY(-360deg); }
+}
+
+
+.wrapper{
+  position:relative;
+  margin: 0 auto;
+  display:block;
+  margin-top: 70px;
+  perspective: 1000px;
+    perspective-origin: 60% 50%;
+  transform: rotate(-10deg);
+  color: transparent;
+  
+}
+.wrapper > div {
+  position: relative;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  height: 0px;
+  color: transparent;
+}
+.sun {
+  width: 300px;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  height: 125px !important;
+}
+.sun .star {
+  width: 300px;
+  height: 300px;
+  background: url(../images/sunning.png) no-repeat;
+  background-size: cover;
+  border-radius: 250px;
+  margin: 0 auto;
+  animation: spinsun 40s infinite linear;
+}
+.planet {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  animation-iteration-count: infinite;
+  overflow: hidden;
+}
+.planet:hover{
+   animation-play-state: paused;
+
+}
+.shadow {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-size: cover;
+  border-radius: 100%;
+}
+
+.mercury {
+  position: absolute;
+  width: 400px;
+  z-index:2;
+  animation: orbitmercury 12s infinite linear;
+  top: -7.5px; 
+}
+.mercury .planet {
+  width:15px;
+  height:15px;
+  background-image: url(../images/mercury2.png);
+  animation: anti-spin 12s infinite linear;
+}
+.mercury .shadow {
+  animation: shadow 12s infinite linear;
+}
+.venus {
+  position: absolute;
+  width: 506px;
+  z-index:3;
+  animation: orbitvenus 15s infinite linear;
+  top: -19px;
+}
+
+.venus .planet {
+  width:38px;
+  height:38px;
+  background-image: url(../images/venus2.png);
+  animation: anti-spin 15s infinite linear;
+}
+.venus .shadow {
+  animation: shadow 15s infinite linear;
+}
+.earth {
+  position: absolute;
+  width: 610px;
+  z-index:4;
+  animation: orbitearth 20s infinite linear;
+  top: -20px;
+}
+.earth .planet {
+  width:40px;
+  height:40px;
+  background-image: url(../images/earth2.png);
+  animation: anti-spin 20s infinite linear;
+}
+.earth .shadow {
+  animation: shadow 20s infinite linear;
+}
+.mars {
+  position: absolute;
+  width: 706px;
+  z-index:5;
+  animation: orbitmars 30s infinite linear;
+  top: -11px;
+}
+.mars .planet {
+  width:22px;
+  height:22px;
+  background-image: url(../images/mars2.png);
+  animation: anti-spin 30s infinite linear;
+}
+.mars .shadow {
+  animation: shadow 30s infinite linear;
+}
+.jupiter {
+  position: absolute;
+  width: 1100px;
+  z-index:6;
+  animation: orbitjupiter 50s infinite linear;
+  top: -64px;
+}
+.jupiter .planet {
+  width:128px;
+  height:128px;
+  background-image: url(../images/jupiter2.png);
+  animation: anti-spin 50s infinite linear;
+}
+.jupiter .shadow {
+  animation: shadow 50s infinite linear;
+}
+.saturn {
+  position: absolute;
+  width: 900px;
+  z-index:7;
+  animation: orbitsaturn 60s infinite linear;
+  top: -100px;
+}
+.saturn .planet {
+  width:265px;
+  height:150px;
+  background-image: url(../images/saturn2.png);
+  animation: anti-spin 60s infinite linear;
+}
+.saturn .shadow {
+  animation: shadow 60s infinite linear;
+   opacity:0;
+}
+
+.uranus {
+  position: absolute;
+  width: 900px;
+  z-index:8;
+  animation: orbituranus 70s infinite linear;
+  top: -100px;
+}
+.uranus .planet {
+  width:80px;
+  height:80px;
+  background-image: url(../images/uranus2.png);
+  animation: anti-spin 70s infinite linear;
+}
+.uranus .shadow {
+  animation: shadow 70s infinite linear;
+   opacity:0;
+}
+.neptune {
+  position: absolute;
+  width: 950px;
+  z-index:9;
+  animation: orbituranus 85s infinite linear;
+  top: -110px;
+}
+.neptune .planet {
+  width:70px;
+  height:70px;
+  background-image: url(../images/neptune2.png);
+  animation: anti-spin 85s infinite linear;
+}
+.neptune .shadow {
+  animation: shadow 85s infinite linear;
+  opacity:0;
+}
+.pluto {
+  position: absolute;
+  width: 970px;
+  z-index:10;
+  animation: orbitpluto 85s infinite linear;
+  top: -120px;
+}
+.pluto .planet {
+  width:12px;
+  height:12px;
+  background-image: url(../images/pluto2.png);
+  animation: anti-spin 90s infinite linear;
+}
+.pluto .shadow {
+  animation: shadow 90s infinite linear;
+   opacity:0;
+}
+
+.navbar {
+    z-index:1;
+    right:2%;
+    color:white;
+    top:0;
+}
+.nav-link:hover {
+    background:#fff;
+  color:#333; 
+    
+}
+.nav-item:hover {
+    color:#333;
+    
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  
+  color:black; 
+  text-decoration: none;
+
+}
+.mercury:hover{
+   animation-play-state: paused;
+
+}
+
+.mercury .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.mercury .shadow:hover{
+   animation-play-state: paused;
+
+}
+.venus:hover{
+   animation-play-state: paused;
+
+}
+
+.venus .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.venus .shadow:hover{
+   animation-play-state: paused;
+
+}
+.earth:hover{
+   animation-play-state: paused;
+ }
+.earth .planet:hover{
+   animation-play-state: paused;
+ }
+
+.earth .shadow :hover{
+   animation-play-state: paused;
+
+}
+.mars:hover{
+   animation-play-state: paused;
+
+}
+
+.mars .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.mars .shadow:hover{
+   animation-play-state: paused;
+}
+.jupiter:hover{
+   animation-play-state: paused;
+}
+
+.jupiter .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.jupiter .shadow:hover{
+   animation-play-state: paused;
+
+}
+.saturn:hover{
+   animation-play-state: paused;
+ }
+
+
+.saturn .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.saturn .shadow:hover{
+   animation-play-state: paused;
+
+}
+.uranus:hover{
+   animation-play-state: paused;
+
+}
+
+.uranus .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.uranus .shadow:hover{
+   animation-play-state: paused;
+
+}
+.neptune:hover{
+   animation-play-state: paused;
+
+}
+
+.neptune .planet:hover{
+   animation-play-state: paused;
+
+}
+
+.neptune .shadow:hover{
+   animation-play-state: paused;
+
+}
+.pluto:hover{
+   animation-play-state: paused;
+
+}
+
+.pluto .planet:hover{
+   animation-play-state: paused;
+}
+
+.pluto .shadow:hover{
+   animation-play-state: paused;
+}
+#sidebar{
+  display: none;
+  height: 85%; 
+  width: 30%; 
+  position: fixed;
+  z-index: 1; 
+  bottom: 0; 
+  right: 0;
+  background-color: black; 
+  padding-top: 20px;
+  opacity: 0.9;
+}
+.close{
+  position: absolute;
+  font-size: 25px;
+  color: white;
+  right: 3%; 
+  z-index: 100;
+  opacity: 1;
+}
+.close:hover{
+  background-color: white;
+  color: black;
+  z-index: 100;
+  opacity: 1;
+}
+ h1{
+  position: absolute;
+  color: white;
+  opacity: 1;
+  z-index: 100;
+  top:20%;
+  right:10%;
+  font-size: 5vh;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+.text ul{
+  position: absolute;
+  color: white;
+  opacity: 1;
+  z-index: 100;
+  top:50%;
+  left:70%;
+  font-size: 2vh;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+
+}
+.text li{
+  width: 100%;
+  height: 100%;
+   margin:0;
+    padding:0;
+    margin: 10px 0;
+}
+#suntext, #mercurytext, #venustext, #earthtext, #marstext, #jupitertext, #saturntext, #uranustext, #neptunetext, #plutotext{
+  display: none;
+}
+#sun2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/sun.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index: 10;
+  }
+
+
+    #mercury2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/mercury.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+
+  #venus2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/venus.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+  #earth2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/earth.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+  #mars2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/mars.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+  #jupiter2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/jupiter.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+
+  #saturn2{
+    position: absolute;
+    display:none;
+    top:26%;
+    left:75%;
+    width:340px;
+    height: 140px;
+    background-image: url(../images/saturn3.png); 
+    z-index:10;
+    background-size: cover;
+
+  }
+
+  #uranus2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/uranus.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+  #neptune2{
+      display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/neptune.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+  #pluto2{
+    display:none;
+    position: absolute;
+    top:26%;
+    left:80%;
+    width:170px;
+    height: 170px;
+    background-image: url(../images/pluto.jpg); 
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -5px -5px 25px 5px #000 inset, 0 0 2px 2px #000;
+    animation: spin 30s linear alternate infinite;
+    z-index:10;
+  }
+  @keyframes spin{
+  100%{background-position: 100%;}}
+
+
+

@@ -1,0 +1,98 @@
+body{
+	background-image: url(../images/background-solar.jpg);
+	margin: 2%;
+    border: 1px solid transparent;
+    padding-bottom: 0;
+}
+button{
+  padding: 0;
+  border: none;
+  background: none;
+}
+h5{
+  color: white;
+  opacity: 0.8;
+}
+.nav-link:hover {
+    background:#fff;
+	color:#333; 
+    
+}
+.nav-item:hover {
+    color:#333;
+    
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+	
+	color:black;
+	text-decoration: none;
+
+}
+.column {
+
+    width: 33.33%;
+    padding: 10px;
+    align-items: center;
+    align-items: center;
+    height: 30%;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    padding: 5% 5% 5% 5%;
+    
+  }
+  img{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+      width: 80%;
+      height: auto;
+      align-content: center;
+      border-radius: 2%;
+    
+
+  }
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
+  
+  .overlay {
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+    align-content: center;
+  }
+  
+  .container:hover .overlay {
+    opacity: 0.9;
+  }
+  
+  .text {
+    color: white;
+    font-size: 120%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+  }

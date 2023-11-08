@@ -1,0 +1,98 @@
+body{
+	background-image: url(../images/background-solar.jpg);
+	overflow-x: hidden;
+	margin: 2%;
+	  border: 1px solid transparent;
+	  padding-bottom: 0px;
+}
+
+.nav-link:hover {
+    background:#fff;
+	color:#333; 
+    
+}
+.nav-item:hover {
+    color:#333;
+    
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+ a:hover{
+	
+	color:black;
+	text-decoration: none;
+
+}
+
+#apod img{
+	width: 100%;
+	height: 100%;
+	align-content: right;
+
+}
+
+#news1 img,#news2 img, #news3 img,#news4 img,#news5 img,#news6 img{
+	width: 100%;
+	height: 100%;
+	align-content: center;
+
+}
+#apod img{
+	width: 90%;
+	height: 70%;
+	align-content: center;
+}
+#newstext1,#newstext2,#newstext3,#newstext4,#newstext5,#newstext6,#issText, #apodtext{
+	color: white;
+	width: 95%;
+	height: 95%;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+h4{
+	font-size: 3vh;
+	text-align: center;
+}
+.column {
+
+  width: 33.33%;
+  padding: 5px;
+
+  align-items: center;
+}
+.column1 {
+  width: 50%;
+
+  align-items: center;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  padding: 2% 2% 2% 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
