@@ -32,7 +32,10 @@ app.get('/currentupdates', function(req, res) {
 }); 
 
 // let port = process.env.PORT;
-let port = 3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 http.listen(port, function() {
     console.log('Server is listening on port: ' + port);
 });
